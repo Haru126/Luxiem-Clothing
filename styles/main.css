@@ -34,10 +34,6 @@
     height: fit-content;
 }
 
-.taskbarBtns:hover {
-    cursor: pointer;
-}
-
 .taskbarBtns {
     transition: .5s;
     list-style-type: none;
@@ -60,18 +56,146 @@
     animation: slideRight ease-in-out 1s ;
 }
 
-.userdropdown {
-    display: block;
+.fa-solid {
+    cursor: pointer;
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    width: 1000px;
     position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 0 20px;
+    top: 5%;
+    left: 30%;
+}
+  
+.input {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 75px;
+    padding-left: 4rem;
+    border: rgb(54, 40, 40) 1px solid;
+    border-radius: 12px;
+    background-color: #d6d4d4;
+    color: black;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+    font-size: 30px;
+    box-shadow: 0 0px 15px 5px inset rgb(105, 105, 105);
+}
+  
+.input::placeholder {
+    color: #000000;
+}
+  
+.input:active {
+    transform: scale(0.97);
+}
+  
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 20;
+    fill: #000000;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.userdropdown {
+    display: none;
+    position: absolute;
+    top: 9.8%;
+    left: 85%;
+    width: 300px;
+    padding: 20px;
     z-index: 600;
     background-color: #fff;
     padding-right: 20px;
     box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .08);
     transition: transform .3s;
 }
+
+.cartdropdown {
+    display: none;
+    position: absolute;
+    top: 9.8%;
+    left: 85%;
+    width: 300px;
+    padding: 20px;
+    z-index: 600;
+    background-color: #fff;
+    padding-right: 20px;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .08);
+    transition: transform .3s;
+}
+
+#user:hover div#userdropdown{
+    display: block;
+    color: white;
+}
+
+.servicedropdown {
+    display: none;
+    position: absolute;
+    top: 9.8%;
+    left: 85%;
+    width: 300px;
+    padding: 20px;
+    z-index: 600;
+    background-color: #fff;
+    padding-right: 20px;
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .08);
+    transition: transform .3s;
+}
+
+.servicon{
+    text-align: center;
+    margin: auto 20px auto 0;
+    font-size: 30px;
+}
+
+.dropdowntext {
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.servtext {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.carttext {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.servcontent{
+    width: 240px;
+}
+
+.dropdowntext.sub {
+    margin: 10px 0 0 0;
+    color: #707070;
+    cursor: pointer;
+}
+
+.dropdowntext.serv.sub{
+    font-size: 15px;
+}
+
+.userhr {
+    margin: 10px 0 10px 0;
+}
+
+.servhr{
+    margin: 0;
+}
+
 .section1{
     margin: 100 0 0 0;
     padding: 50px;
