@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const triggerEl = document.getElementsByClassName(trigger)[0];
         const dropdownEl = document.getElementsByClassName(dropdown)[0];
         
-        const showDropdown = () => { dropdownEl.style.display = display; };
-        const hideDropdown = () => { dropdownEl.style.display = "none"; };
-
-        triggerEl.addEventListener("mouseover", showDropdown);
-        triggerEl.addEventListener("mouseout", hideDropdown);
-        dropdownEl.addEventListener("mouseover", showDropdown);
-        dropdownEl.addEventListener("mouseout", hideDropdown);
+        
     });
 });
