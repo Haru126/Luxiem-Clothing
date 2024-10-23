@@ -1,20 +1,113 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const elements = [
-        { trigger: 'fa-user', dropdown: 'userdropdown', display: 'block' },
-        { trigger: 'fa-cart-shopping', dropdown: 'cartdropdown', display: 'block' },
-        { trigger: 'fa-headset', dropdown: 'servicedropdown', display: 'inline-flex' }
+    
+    
+    const dropdownElements = [
+        { triggerClass: 'fa-user', dropdownClass: 'userdropdown', displayStyle: 'block' },
+        { triggerClass: 'fa-cart-shopping', dropdownClass: 'cartdropdown', displayStyle: 'block' },
+        { triggerClass: 'fa-headset', dropdownClass: 'servicedropdown', displayStyle: 'inline-flex' }
     ];
 
-    elements.forEach(({ trigger, dropdown, display }) => {
-        const triggerEl = document.getElementsByClassName(trigger)[0];
-        const dropdownEl = document.getElementsByClassName(dropdown)[0];
-        
-        const showDropdown = () => { dropdownEl.style.display = display; };
-        const hideDropdown = () => { dropdownEl.style.display = "none"; };
+    dropdownElements.forEach(({ triggerClass, dropdownClass, displayStyle }) => {
+        const triggerElement = document.getElementsByClassName(triggerClass)[0];
+        const dropdownElement = document.getElementsByClassName(dropdownClass)[0];
 
-        triggerEl.addEventListener("mouseover", showDropdown);
-        triggerEl.addEventListener("mouseout", hideDropdown);
-        dropdownEl.addEventListener("mouseover", showDropdown);
-        dropdownEl.addEventListener("mouseout", hideDropdown);
+        const showDropdown = () => { dropdownElement.style.display = displayStyle; };
+        const hideDropdown = () => { dropdownElement.style.display = "none"; };
+
+        triggerElement.addEventListener("mouseover", showDropdown);
+        triggerElement.addEventListener("mouseout", hideDropdown);
+        dropdownElement.addEventListener("mouseover", showDropdown);
+        dropdownElement.addEventListener("mouseout", hideDropdown);
+    });
+
+    const customSelectElements = document.getElementsByClassName("custom-select");
+    const numberOfCustomSelects = customSelectElements.length;
+
+    for (let i = 0; i < numberOfCustomSelects; i++) {
+        const selectElement = customSelectElements[i].getElementsByTagName("select")[0];
+        const numberOfOptions = selectElement.length;
+
+        const selectedDiv = document.createElement("DIV");
+        selectedDiv.setAttribute("class", "select-selected");
+        selectedDiv.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
+        customSelectElements[i].appendChild(selectedDiv);
+
+        const optionsDiv = document.createElement("DIV");
+        optionsDiv.setAttribute("class", "select-items select-hide");
+
+        for (let j = 1; j < numberOfOptions; j++) {
+            const optionDiv = document.createElement("DIV");
+            optionDiv.innerHTML = selectElement.options[j].innerHTML;
+
+            optionDiv.addEventListener("click", function(e) {
+                let selectBox = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                selectBox.selectedIndex = j;  // Update selected index
+                
+                // Update the selected display
+                const optionHeader = this.parentNode.previousSibling;
+                optionHeader.innerHTML = this.innerHTML;
+
+                // Set selected class
+                const selectedOptions = this.parentNode.getElementsByClassName("same-as-selected");
+                for (let k = 0; k < selectedOptions.length; k++) {
+                    selectedOptions[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+
+                // Trigger change event
+                const changeEvent = new Event('change', { bubbles: true });
+                selectBox.dispatchEvent(changeEvent);
+
+                // Close the dropdown
+                optionHeader.click();
+            });
+
+            optionsDiv.appendChild(optionDiv);
+        }
+
+        customSelectElements[i].appendChild(optionsDiv);
+
+        selectedDiv.addEventListener("click", function(e) {
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+
+    function closeAllSelect(currentElement) {
+        const allOptions = document.getElementsByClassName("select-items");
+        const allSelected = document.getElementsByClassName("select-selected");
+
+        for (let i = 0; i < allSelected.length; i++) {
+            if (currentElement !== allSelected[i]) {
+                allSelected[i].classList.remove("select-arrow-active");
+            }
+        }
+
+        for (let i = 0; i < allOptions.length; i++) {
+            if (Array.from(allSelected).indexOf(currentElement) === -1) {
+                allOptions[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    document.addEventListener("click", closeAllSelect);
+
+    const products = document.querySelectorAll('.product');
+    const description = document.querySelectorAll('.item-description');
+
+    products.forEach((product, index) => {
+        product.addEventListener('mouseover', () => {
+            product.parentElement.style.height = '525px';
+            product.parentElement.style.backgroundColor = "#fff";
+            description[index].style.borderTop = '2px solid #000';
+        });
+
+        product.addEventListener('mouseout', () => {
+            product.parentElement.style.height = '450px';
+            product.parentElement.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+            description[index].style.borderTop = '';
+        });
     });
 });

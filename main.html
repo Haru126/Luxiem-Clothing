@@ -7,95 +7,164 @@
     </head>
 
     <body class="body">
-        
-    </body>
-    <nav class="taskbar">
+        <nav class="taskbar">
           
-        <ul class="taskbarContent">
-            <img class="taskbarLogo" src="res/Luxiem Logo.png" alt="">
-
-            <div class="group">
-                <svg viewBox="0 0 20 20" aria-hidden="true" class="search-icon">
-                  <g>
-                    <path
-                      d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-                    ></path>
-                  </g>
-                </svg>
-              
-                <input
-                  id="query"
-                  class="input"
-                  type="search"
-                  placeholder="Search..."
-                  name="searchbar"
-                />
-              </div>
-              
-            <li id="user" class="taskbarBtns"><i  class="fa-solid fa-user"></i></li>
-            
-            <li class="taskbarBtns"><i class="fa-solid fa-cart-shopping"></i></li>
-            <li class="taskbarBtns"><i class="fa-solid fa-headset"></i></li>
-        </ul>
-    </nav>
-
-    <div class="userdropdown" id="userdropdown">
-        <p class="dropdowntext usersub">Sign in / Register</p>
-        <hr class="userhr">
-        <p class="dropdowntext usersub sub">Account</p>
-        <p class="dropdowntext usersub sub">Orders</p>
-        <p class="dropdowntext usersub sub">Coupons</p>
-    </div>
-
-    <div class="cartdropdown" id="cartdropdown">
-        <p class="dropdowntext carttext">Check your cart?</p>
-        <hr class="userhr">
-        <p class="dropdowntext sub">Let's see what you're interested in.</p>
-    </div>
-
-    <div class="servicedropdown" id="servicedropdown">
-        <div class="servicon">
-            <i class="fa-solid fa-wrench"></i>
-        </div>
-        <div class="servcontent">
-            <p class="dropdowntext servtext">Customer Service</p><br>
-            <hr class="servrhr">
-            <p class="dropdowntext serv sub">What can we help you with?</p>
-        </div>
-    </div>
-
-    <div class="homeslider">
-        <img src="res/tshirt1.png" alt="" class="tshirtslides">
-        <img src="res/tshirt3.png" alt="" class="tshirtslides">
-        <img src="res/tshirt2.png" alt="" class="tshirtslides">
-    </div>
-
+            <ul class="taskbarContent">
+                <img class="taskbarLogo" src="res/Luxiem Logo.png" alt="">
     
+                <div class="group">
+                    <svg viewBox="0 0 20 20" aria-hidden="true" class="search-icon">
+                      <g>
+                        <path
+                          d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                        ></path>
+                      </g>
+                    </svg>
+                  
+                    <input
+                      id="query"
+                      class="input"
+                      type="search"
+                      placeholder="Search..."
+                      name="searchbar"
+                    />
+                  </div>
+                  
+                <li id="user" class="taskbarBtns"><i  class="fa-solid fa-user"></i></li>
+                
+                <li class="taskbarBtns"><i class="fa-solid fa-cart-shopping"></i></li>
+                <li class="taskbarBtns"><i class="fa-solid fa-headset"></i></li>
+            </ul>
+        </nav>
+    
+        <div class="userdropdown" id="userdropdown">
+            <p class="dropdowntext usersub">Sign in / Register</p>
+            <hr class="userhr">
+            <p class="dropdowntext usersub sub">Account</p>
+            <p class="dropdowntext usersub sub">Orders</p>
+            <p class="dropdowntext usersub sub">Coupons</p>
+        </div>
+    
+        <div class="cartdropdown" id="cartdropdown">
+            <p class="dropdowntext carttext">Check your cart?</p>
+            <hr class="userhr">
+            <p class="dropdowntext sub">Let's see what you're interested in.</p>
+        </div>
+    
+        <div class="servicedropdown" id="servicedropdown">
+            <div class="servicon">
+                <i class="fa-solid fa-wrench"></i>
+            </div>
+            <div class="servcontent">
+                <p class="dropdowntext servtext">Customer Service</p><br>
+                <hr class="servrhr">
+                <p class="dropdowntext serv sub">What can we help you with?</p>
+            </div>
+        </div>
+        <div class="background"></div>
+        
+        <div class="custom-select">
+            <select name="clothing" class="clothing">
+                <option value="all">All</option>
+                <option value="all">All</option>
+                <option value="T-Shirt">T Shirt</option>
+                <option value="long">Long Sleeves</option>
+                <option value="polo">Polo</option>
+                <option value="v-neck">V Necks</option>
+                <option value="shorts">Shorts</option>
+            </select>
+        </div>
+        
+        
+        
+    
+        
+    
+        <div class="grid-container Shirts">
+    
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/blacklongsleeves.png" alt="" class="product" id="">
+                </div>
+                <div class="item-description">
+                    <span class="productName">Black Long Sleeve</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/blacktshirt.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">Black T-Shirt</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/drifit.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">Luxiem Dri Fit</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/longsleevepolo.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">White Long Sleeve</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/polo.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">White Polo</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/poloshirt.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">Luxiem Polo Shirt</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/vneck.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">White V-Neck</span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="item">
+                    <img src="res/white tshirt.png" alt="" class="product">
+                </div>
+                <div class="item-description">
+                    <span class="productName">White T-Shirt</span>
+                </div>
+            </div>
+    
+          </div>
+    
+        <script src="scripts/main.js"></script>
+        <script src="scripts/filter.js"></script>
+        <script src="scripts/search.js"></script>
+        <script src="scripts/onProduct.js"></script>
+        
+        <div id="productModal" class="modal">
 
-    <div class="section1">
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Suspendisse ridiculus cursus bibendum etiam ante potenti posuere. Quis sit purus per ex felis finibus. Torquent elementum suscipit porttitor condimentum facilisis tortor dolor curae. Mollis dictum iaculis tempor est duis morbi tempor. Vestibulum suscipit et risus, sed netus consequat scelerisque in. Viverra pellentesque fames facilisi neque vulputate class non ornare molestie. Suspendisse varius tristique imperdiet fermentum leo odio ante. Hendrerit dis nisi finibus ornare consequat iaculis efficitur ridiculus a.
+            <div class="modal-content">
+                
+                <img id="modalProductImage" src="" alt="">
+                <div>
+                    <h2 id="modalProductName"></h2>
+                    <p id="modalProductDescription"></p>
+                </div>
+            </div>
+        </div>
 
-Magna nibh eu hac curae condimentum sagittis convallis. Primis commodo placerat lobortis nibh pulvinar posuere tempor. Ad platea libero montes, dapibus nam habitasse potenti potenti. Donec facilisi ornare gravida facilisi justo. Nulla non dapibus curae rutrum hac nisi nam faucibus. Taciti primis aenean nullam; ut nibh est. Hendrerit est dictum nascetur convallis proin arcu mattis.
-
-Dictum odio ipsum tellus quis ex himenaeos tristique et. Elementum tempor facilisis dolor fermentum cubilia, eu id bibendum. Eu vestibulum congue lorem sed vestibulum vivamus felis. Cubilia luctus ut maximus tincidunt; et efficitur facilisis pretium. Tempor risus cras adipiscing porta, ullamcorper tempor consectetur. At scelerisque sed, dolor congue odio rutrum sit.
-
-Morbi phasellus euismod, ante hac nibh odio tellus. Id litora nam donec molestie; suspendisse felis sollicitudin. Sociosqu placerat aenean ridiculus sed vivamus. Nisi metus proin duis felis sodales neque neque. Suspendisse integer volutpat varius ligula sit integer. Consectetur accumsan imperdiet mi blandit ante blandit ut morbi. Tellus maximus congue feugiat neque tristique ullamcorper amet.
-
-Mi vehicula cursus platea natoque felis dignissim bibendum nullam. Tristique erat fringilla dui ac non sit gravida maximus. Facilisis sociosqu nascetur sit fusce metus. Semper tellus tincidunt condimentum vehicula platea ullamcorper phasellus. Facilisis lobortis nostra semper diam scelerisque tincidunt sed. Aliquam faucibus class commodo, fusce mi purus. Donec accumsan commodo viverra semper; aptent mauris placerat magna hac. Aliquam enim primis, ligula vel proin habitant dis.
-    </div>
-
-    <div class="section1">
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Suspendisse ridiculus cursus bibendum etiam ante potenti posuere. Quis sit purus per ex felis finibus. Torquent elementum suscipit porttitor condimentum facilisis tortor dolor curae. Mollis dictum iaculis tempor est duis morbi tempor. Vestibulum suscipit et risus, sed netus consequat scelerisque in. Viverra pellentesque fames facilisi neque vulputate class non ornare molestie. Suspendisse varius tristique imperdiet fermentum leo odio ante. Hendrerit dis nisi finibus ornare consequat iaculis efficitur ridiculus a.
-
-Magna nibh eu hac curae condimentum sagittis convallis. Primis commodo placerat lobortis nibh pulvinar posuere tempor. Ad platea libero montes, dapibus nam habitasse potenti potenti. Donec facilisi ornare gravida facilisi justo. Nulla non dapibus curae rutrum hac nisi nam faucibus. Taciti primis aenean nullam; ut nibh est. Hendrerit est dictum nascetur convallis proin arcu mattis.
-
-Dictum odio ipsum tellus quis ex himenaeos tristique et. Elementum tempor facilisis dolor fermentum cubilia, eu id bibendum. Eu vestibulum congue lorem sed vestibulum vivamus felis. Cubilia luctus ut maximus tincidunt; et efficitur facilisis pretium. Tempor risus cras adipiscing porta, ullamcorper tempor consectetur. At scelerisque sed, dolor congue odio rutrum sit.
-
-Morbi phasellus euismod, ante hac nibh odio tellus. Id litora nam donec molestie; suspendisse felis sollicitudin. Sociosqu placerat aenean ridiculus sed vivamus. Nisi metus proin duis felis sodales neque neque. Suspendisse integer volutpat varius ligula sit integer. Consectetur accumsan imperdiet mi blandit ante blandit ut morbi. Tellus maximus congue feugiat neque tristique ullamcorper amet.
-
-Mi vehicula cursus platea natoque felis dignissim bibendum nullam. Tristique erat fringilla dui ac non sit gravida maximus. Facilisis sociosqu nascetur sit fusce metus. Semper tellus tincidunt condimentum vehicula platea ullamcorper phasellus. Facilisis lobortis nostra semper diam scelerisque tincidunt sed. Aliquam faucibus class commodo, fusce mi purus. Donec accumsan commodo viverra semper; aptent mauris placerat magna hac. Aliquam enim primis, ligula vel proin habitant dis.
-    </div>
-
-
-    <script src="scripts/main.js"></script>
+    </body>
 </html>
