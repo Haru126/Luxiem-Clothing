@@ -397,7 +397,6 @@
     text-decoration: none;
     cursor: pointer;
 }
-
 #modalProductImage {
     width: 700px;
     border-right: 1px solid #000;
@@ -424,6 +423,9 @@
     background: black;
     color: white;
     font-size: 20px;
+    position: relative;
+    top: 30;
+    cursor: pointer;
 }
 
 .usermodal-content {
@@ -501,6 +503,64 @@ input[type='checkbox']:checked {
 .green {
     color: rgb(8, 170, 8);
 }
+
+.sizes {
+    margin: 300px 0 0 0;
+    font-size: 25px;
+    border: none;
+}
+
+.groupradio {
+    border: none;
+}
+
+.custom-radio {
+    position: relative;
+    padding-left: 30px; 
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-radio input {
+    position: absolute;
+    opacity: 0; 
+}
+
+.radio-button {
+    transition: .3s;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px; 
+    height: 20px; 
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transform: translateY(-50%); 
+}
+
+.custom-radio input:checked + .radio-button {
+    background-color: #4caf50; 
+    border-color: #4caf50;
+}
+
+.radio-button::after {
+    content: "";
+    display: none;
+}
+
+.custom-radio input:checked + .radio-button::after {
+    display: block;
+    width: 10px;
+    height: 10px; 
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 @keyframes slideRight {
     0% {

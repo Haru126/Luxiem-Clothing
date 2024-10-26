@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const auth = firebase.auth();
+    const signreg = document.querySelector(".signreg");
+    if(!auth.currentUser){
+        console.log("Signed")
+        
+    } else {
+        signreg.textContent = "Log Out"
+    }
     
     
     

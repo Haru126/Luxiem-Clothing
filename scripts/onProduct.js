@@ -5,20 +5,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalProductDescription = document.getElementById("modalProductDescription");
     const modalProductImage = document.getElementById("modalProductImage");
     const modalProductPrice = document.getElementById("modalProductPrice");
-    
 
     products.forEach(item => {
         const productImage = item.querySelector('.product');
         const productNameElement = item.querySelector('.productName');
-        const productPriceElement = item.querySelector('.productPrice')
+        const productPriceElement = item.querySelector('.productPrice');
 
         productImage.addEventListener('click', () => {
             if (productNameElement) {
                 const productName = productNameElement.textContent;
                 const productPrice = productPriceElement.textContent;
+                const productDescription = productImage.getAttribute('data-description'); // Get the description from data attribute
+
                 modalProductName.textContent = productName;
                 modalProductPrice.textContent = productPrice;
-                modalProductDescription.textContent = "This is the description for " + productName + ".";
+                modalProductDescription.textContent = productDescription; // Use the description from the data attribute
                 modalProductImage.src = productImage.src;  
                 modal.style.display = "block";
             } else {

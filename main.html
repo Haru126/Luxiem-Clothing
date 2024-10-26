@@ -83,7 +83,7 @@
     
             <div class="grid-item">
                 <div class="item">
-                    <img src="res/top wear/blacklongsleeves.png" alt="" class="product" id="">
+                    <img src="res/top wear/blacklongsleeves.png" alt="" class="product" data-description="This is a stylish black long sleeve made from recycled materials.">
                 </div>
                 <div class="item-description">
                     <span class="productName">Black Long Sleeve</span><br><br>
@@ -99,6 +99,8 @@
                     <span class="productName">Black T-Shirt</span><br><br>
                     <span class="productPrice"> PHP 990.00</span><br>
                     <span class="graytext">Made with Recycled Materials</span>
+                    
+                    
                 </div>
             </div>
             <div class="grid-item">
@@ -212,6 +214,7 @@
         <script src="scripts/onRegister.js"></script>
         <script type="module" src="scripts/signin.js"></script>
         <script type="module" src="scripts/register.js"></script>
+        <script type="module" src="scripts/signOut.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
@@ -228,12 +231,35 @@
                     <p id="modalProductPrice"></p>
                     <p id="modalProductDescription"></p>
                     
-
-                    
+                    <form class="sizes">
+                        <fieldset class="groupradio">
+                            <label class="custom-radio">
+                                <input type="radio" name="size" value="small" checked>
+                                <span class="radio-button"></span>
+                                S
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="size" value="medium">
+                                <span class="radio-button"></span>
+                                M
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="size" value="large">
+                                <span class="radio-button"></span>
+                                L
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="size" value="xlarge">
+                                <span class="radio-button"></span>
+                                XL
+                            </label>
+                        </fieldset>
+                    </form>
+                    <button class="addtocart">
+                        Add to Cart
+                    </button>
                 </div>
-                <button class="addtocart">
-                    Add to Cart
-                </button>
+                
             </div>
         </div>
 
