@@ -1,6 +1,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyDpITbv3Ek3GMEQGb6OliIXpuCC1dDPyUI",
   authDomain: "luxiem-clothing.firebaseapp.com",
+  databaseURL: "https://luxiem-clothing-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "luxiem-clothing",
   storageBucket: "luxiem-clothing.appspot.com",
   messagingSenderId: "827071274819",
@@ -8,17 +9,18 @@ const firebaseConfig = {
   measurementId: "G-3QH0TLB84C"
 };
 
-firebase.initializeApp(firebaseConfig);
 
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const database = firebase.database();
 const emailInput = document.querySelector(".regemail");
 const passInput = document.querySelector(".regpass");
 const repassInput = document.querySelector(".retpass");
 const auth = firebase.auth();
 const reg = document.querySelector(".register");
 const textError = document.querySelector(".error");
-const userModal = document.getElementById("userModal");
-const modal = document.getElementById("registerModal");
-const green = document.querySelector(".green");
 
 reg.addEventListener('click', function () {
   if (passInput.value === repassInput.value) {
@@ -29,14 +31,10 @@ reg.addEventListener('click', function () {
     auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("User signed up:", user);
-        return user.sendEmailVerification();
-      })
-      .then(() => {
-        console.log("Verification email sent.");
-        modal.style.display = "none";
-        userModal.style.display = "block";
-        green.textContent = "Please check your email to verify your account.";
+        return user.sendEmailVerification().then(() => {
+          database.ref('users/' + user.uid).set({ email });
+          console.log("Verification email sent and email saved to database.");
+        });
       })
       .catch((error) => {
         switch (error.code) {
@@ -51,7 +49,6 @@ reg.addEventListener('click', function () {
             break;
           default:
             textError.textContent = "Something went wrong.";
-            console.error(error.message);
         }
       });
   } else {
