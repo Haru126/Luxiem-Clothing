@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     
+    
     const dropdownElements = [
-        { triggerClass: 'fa-user', dropdownClass: 'userdropdown', displayStyle: 'block' },
-        { triggerClass: 'fa-cart-shopping', dropdownClass: 'cartdropdown', displayStyle: 'block' },
-        { triggerClass: 'fa-headset', dropdownClass: 'servicedropdown', displayStyle: 'inline-flex' }
+        { triggerClass: 'user', dropdownClass: 'userdropdown', displayStyle: 'block' },
+        { triggerClass: 'cart', dropdownClass: 'cartdropdown', displayStyle: 'block' },
+        { triggerClass: 'headset', dropdownClass: 'servicedropdown', displayStyle: 'inline-flex' }
     ];
 
     dropdownElements.forEach(({ triggerClass, dropdownClass, displayStyle }) => {
@@ -41,24 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             optionDiv.addEventListener("click", function(e) {
                 let selectBox = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                selectBox.selectedIndex = j;  // Update selected index
-                
-                // Update the selected display
+                selectBox.selectedIndex = j;
+
                 const optionHeader = this.parentNode.previousSibling;
                 optionHeader.innerHTML = this.innerHTML;
 
-                // Set selected class
                 const selectedOptions = this.parentNode.getElementsByClassName("same-as-selected");
                 for (let k = 0; k < selectedOptions.length; k++) {
                     selectedOptions[k].removeAttribute("class");
                 }
                 this.setAttribute("class", "same-as-selected");
 
-                // Trigger change event
                 const changeEvent = new Event('change', { bubbles: true });
                 selectBox.dispatchEvent(changeEvent);
 
-                // Close the dropdown
                 optionHeader.click();
             });
 
@@ -101,12 +98,15 @@ document.addEventListener("DOMContentLoaded", () => {
         product.addEventListener('mouseover', () => {
             product.parentElement.style.height = '525px';
             product.parentElement.style.backgroundColor = "#fff";
+            product.parentElement.style.cursor = 'pointer';
+            product.parentElement.parentElement.style.scale = '1.1';
             description[index].style.borderTop = '2px solid #000';
         });
 
         product.addEventListener('mouseout', () => {
             product.parentElement.style.height = '450px';
             product.parentElement.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+            product.parentElement.parentElement.style.scale = '1';
             description[index].style.borderTop = '';
         });
     });

@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Selected Value:", selectedValue);
             filterItems(selectedValue);
         });
-
-        // Trigger the filter on the initial load
         filterItems(clothingSelect.value);
     }
 
@@ -21,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const normalizedSelectedValue = selectedValue.replace(/\s+/g, '').toLowerCase();
 
             if (normalizedSelectedValue === "all" || normalizedProductName.includes(normalizedSelectedValue)) {
-                div.style.display = "block";  // Show div if it matches the selected category
+                div.style.display = "block";
             } else {
-                div.style.display = "none";   // Hide div if it doesn't match
+                div.style.display = "none";
             }
         });
     }
