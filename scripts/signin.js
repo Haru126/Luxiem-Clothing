@@ -7,10 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("userModal");
   const auth = firebase.auth();
 
-  // Set persistence
   auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
       .then(() => {
-          // Check if the user is signed in on page load
           auth.onAuthStateChanged(user => {
               if (user) {
                   signreg.textContent = "Log Out";
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
               }
           });
 
-          // Sign in logic
           signInButton.addEventListener('click', function () {
               const email = emailInput.value;
               const password = passInput.value;
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   .then((userCredential) => {
                       console.log("User signed in:", userCredential.user);
                       modal.style.display = "none";
-                      signreg.textContent = "Log Out"; // Update button text
+                      signreg.textContent = "Log Out"; 
                   })
                   .catch((error) => {
                       switch (error.code) {

@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (productNameElement) {
                 const productName = productNameElement.textContent;
                 const productPrice = productPriceElement.textContent;
-                const productDescription = productImage.getAttribute('data-description'); // Get the description from data attribute
+                const productDescription = productImage.getAttribute('data-description');
 
                 modalProductName.textContent = productName;
                 modalProductPrice.textContent = productPrice;
-                modalProductDescription.textContent = productDescription; // Use the description from the data attribute
+                modalProductDescription.textContent = productDescription;
                 modalProductImage.src = productImage.src;  
                 modal.style.display = "block";
             } else {
