@@ -33,4 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.style.display = "none";
         }
     };
+
+
+    const subquan = document.querySelector(".deduct");
+    const addquan = document.querySelector(".add");
+    const quantity = document.querySelector(".quantity");
+
+    subquan.addEventListener('click', () => {
+        if(parseInt(quantity.textContent) > 1){
+            quantity.textContent = parseInt(quantity.textContent) - 1;
+        }
+    })
+
+    addquan.addEventListener('click', () =>{
+        quantity.textContent = parseInt(quantity.textContent) + 1;
+        console.log(quantity.textContent);
+    })
 });

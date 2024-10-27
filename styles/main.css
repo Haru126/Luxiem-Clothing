@@ -398,24 +398,58 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.prod {
+    height: fit-content;
+}
+
 #modalProductImage {
     width: 700px;
-    border-right: 1px solid #000;
+    max-height: 700px;
+    transition: .3s;
+    
+}
+
+#modalProductImage:hover {
+    scale: 1.1;
+    filter: drop-shadow(10px 10px 10px #000);
 }
 
 .description {
     padding: 50px;
+    border-left: 1px solid #000;
 }
 
 #modalProductName{
     font-size: 75px;
 }
 #modalProductDescription{
-    font-size: 50px;
+    padding: 50px 0;
+    font-size: 25px;
 }
 
 #modalProductPrice {
     font-size: 30px;
+}
+
+.quantitySelector{
+    font-size: 40px;
+}
+
+.deduct{
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+
+.add{
+    margin: 0 0 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.quantity {
+    font-size: 45px;
+    line-height: 50px;
 }
 
 .addtocart {
