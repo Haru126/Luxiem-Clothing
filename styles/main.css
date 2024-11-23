@@ -596,6 +596,13 @@ input[type='checkbox']:checked {
     transform: translate(-50%, -50%);
 }
 
+.red {
+    color: red;
+}
+
+.noselect {
+    user-select: none;
+}
 
 @keyframes slideRight {
     0% {

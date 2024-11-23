@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                register.textContent = "";
+                signInError.textContent = "";
             }
         };
     }

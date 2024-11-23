@@ -23,6 +23,7 @@ const reg = document.querySelector(".register");
 const textError = document.querySelector(".error");
 const userModal = document.getElementById("userModal");
 const modal = document.getElementById("registerModal");
+const registered = document.querySelector(".green");
 
 reg.addEventListener('click', function () {
   if (passInput.value === repassInput.value) {
@@ -36,6 +37,7 @@ reg.addEventListener('click', function () {
         return user.sendEmailVerification().then(() => {
           database.ref('users/' + user.uid).set({ email });
           console.log("Verification email sent and email saved to database.");
+          registered.textContent = "Verification Email sent!";
           modal.style.display = "none";
           userModal.style.display = "block";
         });
