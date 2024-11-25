@@ -448,7 +448,7 @@
 }
 
 .quantity {
-    font-size: 45px;
+    font-size: 30px;
     line-height: 50px;
 }
 
@@ -602,6 +602,39 @@ input[type='checkbox']:checked {
 
 .noselect {
     user-select: none;
+}
+
+.footer {
+    background: white;
+    height: 200px;
+    margin: 100px 0 0 0;
+    text-align: center;
+    padding: 10em;
+    overflow-y: hidden;
+}
+
+.footertitle {
+    font-size: 50px;
+    
+}
+
+.footerdescription{
+    font-size: 25px;
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+.footertext {
+    margin: 140px 0 0 0;
+}
+
+.foot {
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.foot:hover{
+    text-decoration: underline;
 }
 
 @keyframes slideRight {
