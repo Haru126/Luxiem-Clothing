@@ -232,6 +232,7 @@
         <script src="scripts/onProduct.js"></script>
         <script src="scripts/onUser.js"></script>
         <script src="scripts/onRegister.js"></script>
+        <script src="scripts/forgotPassword.js"></script>
         <script type="module" src="scripts/signin.js"></script>
         <script type="module" src="scripts/register.js"></script>
         <script type="module" src="scripts/signOut.js"></script>
@@ -301,6 +302,7 @@
                 <br><br>
                 <button class="signin">Sign In</button>
                 <p class="graytext underline">or Register</p>
+                <p class="graytext underline forgotpassword">Forgot Password</p>
                 
             </div>
 
@@ -313,9 +315,22 @@
                 <input type="password" class="modalInput password regpass" placeholder="Password"><br>
                 <input type="password" class="modalInput password retpass" placeholder="Retype Password"><br>
                 <span class="error"></span><br>
-                <button class="register">Registerr</button>
+                <button class="register">Register</button>
             </div>
         </div>
+
+        <div class="modal" id="fpModal">
+            <div class="usermodal-content" id="forgotPasswordModal" style="display: block;">
+                <p class="title">Forgot Password</p>
+                <input type="email" class="modalInput forgotEmail" placeholder="Enter your email" />
+                <br>
+                <button class="forgotPassword">Reset Password</button>
+                <p class="resetError" style="color: red;"></p>
+                <p class="resetSuccess" style="color: green;"></p>
+              </div>
+        </div>
+        
+          
 
     </body>
 </html>

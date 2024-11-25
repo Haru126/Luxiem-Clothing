@@ -9,7 +9,6 @@ const firebaseConfig = {
   measurementId: "G-3QH0TLB84C"
 };
 
-
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -25,39 +24,49 @@ const userModal = document.getElementById("userModal");
 const modal = document.getElementById("registerModal");
 const registered = document.querySelector(".green");
 
-reg.addEventListener('click', function () {
-  if (passInput.value === repassInput.value) {
-    textError.textContent = "";
-    const email = emailInput.value;
-    const password = passInput.value;
+const handleRegistration = () => {
+  if (modal.style.display === "block") {
+    if (passInput.value === repassInput.value) {
+      textError.textContent = "";
+      const email = emailInput.value;
+      const password = passInput.value;
 
-    auth.createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        return user.sendEmailVerification().then(() => {
-          database.ref('users/' + user.uid).set({ email });
-          console.log("Verification email sent and email saved to database.");
-          registered.textContent = "Verification Email sent!";
-          modal.style.display = "none";
-          userModal.style.display = "block";
+      auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          return user.sendEmailVerification().then(() => {
+            database.ref('users/' + user.uid).set({ email });
+            console.log("Verification email sent and email saved to database.");
+            registered.textContent = "Verification Email sent!";
+            modal.style.display = "none";
+            userModal.style.display = "block";
+          });
+        })
+        .catch((error) => {
+          switch (error.code) {
+            case "auth/email-already-in-use":
+              textError.textContent = "Email is already in use.";
+              break;
+            case "auth/invalid-email":
+              textError.textContent = "Invalid email.";
+              break;
+            case "auth/weak-password":
+              textError.textContent = "Weak password.";
+              break;
+            default:
+              textError.textContent = "Something went wrong.";
+          }
         });
-      })
-      .catch((error) => {
-        switch (error.code) {
-          case "auth/email-already-in-use":
-            textError.textContent = "Email is already in use.";
-            break;
-          case "auth/invalid-email":
-            textError.textContent = "Invalid email.";
-            break;
-          case "auth/weak-password":
-            textError.textContent = "Weak password.";
-            break;
-          default:
-            textError.textContent = "Something went wrong.";
-        }
-      });
-  } else {
-    textError.textContent = "Passwords do not match.";
+    } else {
+      textError.textContent = "Passwords do not match.";
+    }
+  }
+};
+
+reg.addEventListener('click', handleRegistration);
+
+document.addEventListener('keydown', function (event) {
+  if (event.keyCode === 13) {
+    handleRegistration();
   }
 });

@@ -2,5 +2,8 @@
   "type": "module",
   "dependencies": {
     "firebase": "^11.0.1"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d ."
   }
 }

@@ -503,7 +503,7 @@ input[type='checkbox'] {
     cursor: pointer;
 }
 
-.underline {
+.underline:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -602,6 +602,11 @@ input[type='checkbox']:checked {
 
 .noselect {
     user-select: none;
+}
+
+.forgotPassword {
+    padding: 20px;
+    font-size: 40px;
 }
 
 .footer {
